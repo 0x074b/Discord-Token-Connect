@@ -11,7 +11,7 @@ def autologin():
         driver = webdriver.Chrome(executable_path="chromedriver.exe")
         driver.maximize_window()
         driver.get('https://discord.com/login')
-        js = 'function login(token) {setInterval(() => {document.body.appendChild(document.createElement `iframe`).contentWindow.localStorage.token = `"${token}"`}, 50);setTimeout(() => {location.reload();}, 500);}' # c'etait le plus chiant
+        js = 'function login(token) {setInterval(() => {document.body.appendChild(document.createElement `iframe`).contentWindow.localStorage.token = `"${token}"`}, 50);setTimeout(() => {location.reload();}, 500);}' # the most boring part
         time.sleep(3)
         driver.execute_script(js + f'login("{entertoken}")')
         time.sleep(10)
