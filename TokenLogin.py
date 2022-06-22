@@ -5,7 +5,6 @@ from selenium import webdriver
 def autologin():
     os.system('cls')
     print("""Enter token""")
-    print()
     entertoken = str=(input(f"""Token >"""))
     print("\n\n")
     if len(entertoken) >= 59:
@@ -18,15 +17,15 @@ def autologin():
         time.sleep(10)
         if driver.current_url == 'https://discord.com/login':
             os.system('cls')
-            print(f"""{Fore.LIGHTRED_EX}[!] Connection interompu""")
+            print(f"""{Fore.LIGHTRED_EX}[!] Connection stopped""")
             driver.close()
         else:
             os.system('cls')
-            print(f"""{Fore.LIGHTGREEN_EX}[!!] Connection Etabli""")
-        input(f"""# appuyez sur entrer pour quitter""")
+            print(f"""{Fore.LIGHTGREEN_EX}[!] Connection established""")
+        input(f"""# press ENTER to quit""")
     else:
-        print(f"""{Fore.LIGHTRED_EX}[!] Probleme avec le token, verifier le""")
+        print(f"""{Fore.LIGHTRED_EX}[!] Problem with the token""")
         time.sleep(2)
         os.system('cls')
 autologin()
-#fin
+
